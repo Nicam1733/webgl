@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <script src="./gl-matrix-min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Projet WebGL</title>
+</head>
+
+<body onload='main()'>
+    <canvas style="border: solid 2px black;" id='dawin-webgl' width=800 height=800>
+        Utilisez un navigateur compatible avec WebGL
+    </canvas>
+    <aside>
+        <form id="settingsForm" class="disHighlight">
+            <h2>Camera</h2>
+            <div class="slidecontainer">
+                zoom = <span id="zoomValue">1</span> <input ondblclick='resetInput("zoom")' type="range" min="0.1" max="5"
+                    step="0.1" value="1" class="slider" id="zoom"><br>
+                FOV = <span id="FOVValue">30</span> degres
+                <input ondblclick='resetInput("FOV")' type="range" min="30" max="120" step="0.1" value="30" class="slider"
+                    id="FOV"><br>
+            </div>
+            <h2>Translation</h2>
+            <div class="slidecontainer">
+                tx = <span id="txValue">0</span> <input ondblclick='resetInput("tx")' type="range" min="-10" max="10"
+                    step="0.1" value="0" class="slider" id="tx"><br>
+                ty = <span id="tyValue">0</span> <input ondblclick='resetInput("ty")' type="range" min="-10" max="10"
+                    step="0.1" value="0" class="slider" id="ty"><br>
+                tz = <span id="tzValue">0</span> <input ondblclick='resetInput("tz")' type="range" min="-10" max="10"
+                    step="0.1" value="0" class="slider" id="tz"><br>
+            </div>
+            <h2>Rotation</h2>
+            <div class="slidecontainer">
+                rx = <span id="rxValue">0</span> <input ondblclick='resetInput("rx")' type="range" min="-3.14" max="3.14"
+                    step="0.01" value="0" class="slider" id="rx"><br>
+                ry = <span id="ryValue">0</span> <input ondblclick='resetInput("ry")' type="range" min="-3.14" max="3.14"
+                    step="0.01" value="0" class="slider" id="ry"><br>
+                rz = <span id="rzValue">0</span> <input ondblclick='resetInput("rz")' type="range" min="-3.14" max="3.14"
+                    step="0.01" value="0" class="slider" id="rz"><br>
+            </div>
+            <h2>Couleur</h2>
+            <div id="colors">
+                <span>Dessus</span> <input type="color" class="color" colorPosition="1" value="#00ff00"><br>
+                <span>Dessous</span> <input type="color" class="color" colorPosition="2" value="#66b2cc"><br>
+                <span>Haut</span> <input type="color" class="color" colorPosition="3" value="#ffff00"><br>
+                <span>Bas</span> <input type="color" class="color" colorPosition="4" value="#ff0000"><br>
+                <span>Droite</span> <input type="color" class="color" colorPosition="5" value="#0000ff"><br>
+                <span>Gauche</span> <input type="color" class="color" colorPosition="6" value="#ff00ff"><br>
+            </div>
+            <br><button onclick='reset("rx")'>RESET</button>
+        </form>
+    </aside>
+    <script src='projet.js'></script>
+</body>
+
+</html>
